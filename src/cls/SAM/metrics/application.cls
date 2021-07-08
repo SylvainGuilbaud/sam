@@ -11,7 +11,7 @@ Method GetSensors() As %Status
    do ..SetSensor("my_counter",$increment(^MyCounter),"my_label")
    do ..SetSensor("my_gauge",$random(100))
    do ..SetSensor("python",1,"my_label")
-   do ..SetSensor("python","ALERTE","Matthieu")
+   do ..SetSensor("python",$RANDOM(10),"Matthieu")
 
    return $$$OK
 }
