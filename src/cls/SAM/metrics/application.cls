@@ -2,13 +2,17 @@
 Class SAM.metrics.application Extends %SYS.Monitor.SAM.Abstract
 {
 
-Parameter PRODUCT = "myapp";
+Parameter PRODUCT = "EventLog";
 
 /// Collect metrics from the specified sensors
 Method GetSensors() As %Status
 {
+    // SQL count(*) GROUP BY EVENT
    do ..SetSensor("my_counter",$increment(^MyCounter),"my_label")
    do ..SetSensor("my_gauge",$random(100))
+   do ..SetSensor("python",1,"my_label")
+   do ..SetSensor("python","ALERTE","Matthieu")
+
    return $$$OK
 }
 

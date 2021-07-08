@@ -11,7 +11,19 @@ groups:
 - name: "2"
   rules: []
 - name: "3"
-  rules: []
+  rules:
+  - alert: PYTHON ALERT
+    annotations:
+      description: PYTHON ALERT {{ $value }}
+    expr: EventLog_python{cluster="3"} > 0
+    labels:
+      severity: critical
+  - alert: MATTHIEU
+    annotations:
+      description: MATTHIEU {{ $value }}
+    expr: EventLog_python{cluster="3"} != 0
+    labels:
+      severity: warning
 - name: "4"
   rules: []
 
