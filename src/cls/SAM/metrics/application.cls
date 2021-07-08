@@ -16,11 +16,12 @@ ClassMethod add() As %Status
 {
     set ns=$NAMESPACE
     zn "%SYS"
-    set status = ##class(SYS.Monitor.SAM.Config).AddApplicationClass("SAM.metrics.application", "USER")
+    set status = ##class(SYS.Monitor.SAM.Config).AddApplicationClass($CLASSNAME(), ns)
     if status {
-        write $CLASSNAME," successfully added to SAM configuration",!
+        write $CLASSNAME()," successfully added to SAM configuration in ",ns," namespace",!
+        write "<<< WARNING >>> To get the metrics, do not forget to add appropriate roles/resources to /api/monitor application",!
     } else {
-        write "error:",$system.Status.GetErrorText(status),!
+        write "error while adding ",$CLASSNAME()," to SAM configuration in ",ns," namespace",$system.Status.GetErrorText(status),!
     }
     zn ns
     return status

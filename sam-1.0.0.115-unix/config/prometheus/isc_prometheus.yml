@@ -25,4 +25,9 @@ scrape_configs:
       cluster: "2"
     targets:
     - 192.168.102.2:52773
+  - labels:
+      cluster: "3"
+    targets:
+    - host.docker.internal:52774
+    - host.docker.internal:52773
 
