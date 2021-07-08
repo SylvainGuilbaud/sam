@@ -59,7 +59,7 @@ CONTAINER ID        IMAGE                                               COMMAND 
 d73234723046        prom/alertmanager:v0.20.0                           "/bin/alertmanager -…"   About a minute ago   Up About a minute             9093/tcp                                               sam_alertmanager_1
 90450018cab1        grafana/grafana:6.7.1                               "/run.sh"                About a minute ago   Up About a minute             3000/tcp                                               sam_grafana_1
 12a47da64b2c        prom/prometheus:v2.17.1                             "/bin/prometheus --w…"   About a minute ago   Up About a minute             9090/tcp                                               sam_prometheus_1
-9d4dac95921a        store/intersystems/sam:1.0                          "/iris-main"             About a minute ago   Up About a minute (healthy)   2188/tcp, 51773/tcp, 52773/tcp, 53773/tcp, 54773/tcp   sam_iris_1
+9d4dac95921a        store/intersystems/sam:1.0                          "/iris-main"             About a minute ago   Up About a minute (healthy)   2188/tcp, 11111/tcp, 12111/tcp, 53773/tcp, 54773/tcp   sam_iris_1
 ```  
 
 
@@ -69,7 +69,7 @@ To shut down SAM run:
 
 ## CONNECT TO SAM WITH YOUR BROWSER
 In your browser, visit:  
-	```http://<ip-address-of-host-where-SAM-runs>:8080/api/sam/app/index.csp```  
+	```http://<ip-address-of-host-where-SAM-runs>:9999/api/sam/app/index.csp```  
 You'll be prompted to login. You can use standard InterSystems IRIS credentials like _SYSTEM/SYS. You'll be prompted to change the password.
 
 ## LEARN MORE ABOUT SAM
