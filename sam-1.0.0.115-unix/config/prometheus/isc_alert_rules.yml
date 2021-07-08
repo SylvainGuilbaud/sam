@@ -26,4 +26,6 @@ groups:
       severity: warning
 - name: "4"
   rules: []
+- name: "5"
+  rules: []
 

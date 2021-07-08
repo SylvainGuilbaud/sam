@@ -59,6 +59,8 @@ services:
       - --storage.tsdb.retention.time=2h
     depends_on:
       - iris
+    ports:
+        - 9090:9090  
     expose:
       - '9090'
     image: prom/prometheus:v2.17.1

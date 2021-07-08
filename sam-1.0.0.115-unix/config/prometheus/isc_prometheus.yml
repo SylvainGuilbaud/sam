@@ -34,4 +34,8 @@ scrape_configs:
       cluster: "4"
     targets:
     - host.docker.internal:9092
+  - labels:
+      cluster: "5"
+    targets:
+    - 10.56.0.56:52773
 
